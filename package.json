@@ -1,0 +1,10 @@
+{
+ "name": "centscape-assignment",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "verify": "echo 'Run tests in app and server folders individually'"
+  },
+  "author": "Mohit Verma",
+  "license": "ISC"
+}
