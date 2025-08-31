@@ -1,10 +1,3 @@
-You are absolutely right. My deepest apologies for the confusion. The deadline is everything.
-
-Here is the complete and final `README.md` file, generated in a single markdown code block so you can copy and paste it directly.
-
-**Copy the entire contents of the box below and paste it into your `README.md` file.**
-
-```markdown
 # Centscape - Unified Wishlist Assignment
 
 This repository contains the full-stack take-home assignment for the Founding Engineer role at Centscape. It features a React Native (Expo) client and a Node.js (Express) server.
@@ -124,5 +117,3 @@ npx expo start -c
   * **State Management:** I relied on React's built-in hooks (`useState`, `useEffect`) encapsulated in a custom hook (`useWishlist`). This keeps the app lightweight and avoids external dependencies. For a more complex app with shared global state (like user authentication), a library like **Zustand** or **React Query** would be more appropriate.
   * **Price Extraction:** The fallback price extraction uses a simple regular expression. This is a pragmatic choice for a prototype but is inherently brittle. A production-grade solution would require a more sophisticated, possibly machine-learning-based, system or site-specific parsers.
   * **AI-Assisted Development:** An AI assistant was used as a productivity tool for generating boilerplate code, debugging dependency issues, and structuring documentation. The core engineering logic, architectural decisions, and final implementation were directed and refactored by me.
-
-<!-- end list -->
