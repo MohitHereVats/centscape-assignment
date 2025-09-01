@@ -53,9 +53,13 @@ export const fetchUrlMetadata = async (url: string): Promise<Metadata> => {
   const response = await axios.get(url, {
     timeout: 5000,
     maxRedirects: 3,
-    maxContentLength: 512 * 1024,
+    maxContentLength: 5 * 1024 * 1024, // Allow up to 5 MB of content
+    maxBodyLength: 5 * 1024 * 1024,
     headers: {
-      "User-Agent": "CentscapeBot/1.0 (+http://www.centscape.com/bot.html)",
+      "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
+      // Add other headers if needed, like Accept-Language
+      "Accept-Language": "en-US,en;q=0.9",
     },
     responseType: "arraybuffer",
   });
@@ -81,7 +85,7 @@ export const fetchUrlMetadata = async (url: string): Promise<Metadata> => {
     image:
       getMetatag("og:image") ||
       getMetatag("twitter:image") ||
-      $("img").first().attr("src") ||
+      $('#landingImage').attr('src') ||
       null,
     siteName: getMetatag("og:site_name") || urlObj.hostname,
     sourceUrl: url,
@@ -104,6 +108,8 @@ export const fetchUrlMetadata = async (url: string): Promise<Metadata> => {
       metadata.currency = match[0].charAt(0);
     }
   }
+
+  console.log("Extracted metadata:", metadata);
 
   return metadata;
 };

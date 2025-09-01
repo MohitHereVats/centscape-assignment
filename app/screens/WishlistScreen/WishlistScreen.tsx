@@ -19,6 +19,7 @@ const WishlistScreen = () => {
 
   const handleDeepLink = useCallback((event: { url: string }) => {
     const url = event.url;
+    // Url that starts with "centscape://add?url=";
     const match = url.match(/centscape:\/\/add\?url=([^&]+)/);
     if (match && match[1]) {
       const decodedUrl = decodeURIComponent(match[1]);

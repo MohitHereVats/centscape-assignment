@@ -15,9 +15,11 @@ export const getPreview = async (
   const url = req.body.url;
 
   try {
+    console.log("Fetching metadata for URL:", url);
     const metadata = await fetchUrlMetadata(url);
     return res.status(200).json(metadata);
   } catch (error) {
+    console.log("Error fetching metadata:", error);
     next(error);
   }
 };

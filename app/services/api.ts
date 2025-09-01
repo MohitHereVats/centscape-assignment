@@ -3,7 +3,9 @@ import axios from "axios";
 // IMPORTANT: Replace with your actual server IP/domain.
 // For Expo Go on a real device, use your computer's local network IP.
 // For simulators, `localhost` usually works.
-const API_BASE_URL = 'http://localhost:3001';
+
+// const API_BASE_URL = 'http://localhost:3001';
+const API_BASE_URL = 'http://192.168.1.4:8081';
 
 const apiClient = axios.create({
     baseURL: API_BASE_URL,
